@@ -1,60 +1,82 @@
 package com.nameless;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.location.LocationManager;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
+import android.view.View;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.Button;
 
+import com.parse.ParseInstallation;
 
-public class MainActivity extends Activity {
+import at.markushi.ui.RevealColorView;
+
+public class MainActivity extends Activity implements View.OnClickListener {
+
+    Button connectButton;
+    RevealColorView revealColorView;
+
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+       sharedPreferences = getSharedPreferences("CurrentUser", 0);
+        initializeViews();
+
+        if (sharedPreferences.getBoolean("hasBeenInitialized", false) == false)
+            setupParseForInitialUse();
+    }
+
+    public void initializeViews() {
+        connectButton = (Button) findViewById(R.id.connectButton);
+        revealColorView = (RevealColorView) findViewById(R.id.reveal);
+
+        setListeners();
+    }
+
+
+    public void setupParseForInitialUse() {
+        ParseInstallation parseInstallation = ParseInstallation.getCurrentInstallation();
+        parseInstallation.put("username", parseInstallation.getObjectId());
+        parseInstallation.saveInBackground();
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+
+        edit.putBoolean("hasBeenInitialized", false);
+        edit.commit();
+
+        Log.d("IN", String.valueOf(sharedPreferences.getBoolean("hasBeenInitialized", false)));
+    }
+
+    public void setListeners() {
+        connectButton.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.connectButton:
+                openChat();
+                break;
+        }
+    }
+
+    public void openChat() {
+
+        connectButton.animate().translationY(-450).setInterpolator(new DecelerateInterpolator()).alpha(0.0f);
+
+        revealColorView.setVisibility(View.VISIBLE);
+        revealColorView.reveal((revealColorView.getLeft() + revealColorView.getRight()) / 2,
+                (revealColorView.getTop() + revealColorView.getBottom()) / 2, getColor(R.color.green_800), 0, 450, null);
 
     }
 
-//    public void checkLocation() {
-//        LocationManager lm = null;
-//        boolean gps_enabled = false,network_enabled = false;
-//        if(lm==null)
-//            lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-//        try{
-//            gps_enabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
-//        }catch(Exception ex){}
-//        try{
-//            network_enabled = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-//        }catch(Exception ex){}
-//
-//        if(!gps_enabled && ){
-//            AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-//            dialog.setMessage("Location not enabled");
-//            dialog.setPositiveButton("Location Settings", new DialogInterface.OnClickListener() {
-//
-//                @Override
-//                public void onClick(DialogInterface paramDialogInterface, int paramInt) {
-//                    Intent myIntent = new Intent( Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-//                    startActivity(myIntent);
-//                }
-//            });
-//            dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-//
-//                @Override
-//                public void onClick(DialogInterface paramDialogInterface, int paramInt) {
-//
-//                }
-//            });
-//            dialog.show();
-//
-//        }
-//    }
+    public int getColor(int id) {
+        return getResources().getColor(id);
+    }
+
 
 }

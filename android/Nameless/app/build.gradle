@@ -19,9 +19,13 @@ android {
     }
 }
 
+repositories {
+    jcenter()
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile files('src/libs/Parse-1.5.1.jar')
+    compile files('libs/Parse-1.5.1.jar')
     compile 'com.android.support:support-v4:21.0.0'
     compile 'com.android.support:appcompat-v7:21.0.0'
     compile 'com.android.support:cardview-v7:21.0.3'
@@ -29,4 +33,5 @@ dependencies {
     compile 'me.drakeet.materialdialog:library:1.2.2'
     compile 'com.github.markushi:android-ui:1.2'
     compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.github.navasmdc:MaterialDesign:1.+@aar'
 }
