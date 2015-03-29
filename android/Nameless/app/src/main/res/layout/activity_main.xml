@@ -1,8 +1,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/green_800">
 
     <at.markushi.ui.RevealColorView
         android:id="@+id/reveal"
@@ -10,6 +12,13 @@
         android:layout_height="match_parent"
         android:background="@android:color/transparent"
         android:visibility="invisible" />
+
+    <com.pnikosis.materialishprogress.ProgressWheel
+        android:id="@+id/progressWheel"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        wheel:matProg_barColor="@color/green_950" />
 
     <Button
         android:id="@+id/connectButton"
@@ -19,11 +28,81 @@
         android:background="@drawable/circle"
         android:text="Connect Me"
         android:elevation="5dp"
-        android:textColor="#ffffff"
+        android:textColor="@color/green_950"
         android:fontFamily="sans-serif-light" />
 
-    <ListView
-        android:id="@+id/conversationListView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <RelativeLayout
+        android:visibility="invisible"
+        android:id="@+id/messagingLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:alpha="0.0">
+
+        <Button
+            android:id="@+id/closeConversationButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/circle_gray"
+            android:text="Close"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="-20dp"
+            android:layout_marginLeft="-20dp"
+            android:elevation="5dp"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-light" />
+
+        <Button
+            android:id="@+id/nextConversationButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/circle_green"
+            android:text="Next"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="-20dp"
+            android:layout_marginRight="-20dp"
+            android:elevation="5dp"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-light" />
+
+        <ListView
+            android:id="@+id/conversationListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stackFromBottom="true"
+            android:layout_above="@+id/lowerLayout"
+            android:dividerHeight="0dp"
+            android:divider="@android:color/transparent" />
+
+        <LinearLayout
+            android:id="@+id/lowerLayout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/off_white"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/newMessageEditText"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_weight="3"
+                android:hint="Send Message"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="10dp" />
+
+            <Button
+                android:id="@+id/sendButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send"
+                android:layout_weight="1"
+                android:layout_gravity="bottom" />
+        </LinearLayout>
+    </RelativeLayout>
+
 </RelativeLayout>

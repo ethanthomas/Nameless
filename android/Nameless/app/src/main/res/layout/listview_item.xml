@@ -1,11 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    
-    <!--<TextView-->
-        <!--&lt;!&ndash;android:id="@+id/"&ndash;&gt;-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content" />-->
 
+    <LinearLayout
+        android:id="@+id/cardView"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/imageLeft"
+            android:layout_gravity="top|left"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/person"
+            android:background="@drawable/circle_person"
+            android:visibility="invisible"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardViewLayout"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:padding="20dp"
+            android:background="@color/green_800"
+            android:layout_marginRight="10dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/messageLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp" />
+
+                <!--<TextView-->
+                <!--android:id="@+id/timeLeft"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:visibility="invisible"-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:paddingTop="10dp" />-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/messageRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:layout_gravity="right"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp" />
+
+                <!--<TextView-->
+                <!--android:id="@+id/timeRight"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:visibility="invisible"-->
+                <!--android:layout_gravity="right"-->
+                <!--android:paddingRight="10dp"-->
+                <!--android:paddingTop="10dp" />-->
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <ImageView
+            android:id="@+id/imageRight"
+            android:layout_gravity="top|right"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/person"
+            android:background="@drawable/circle_person"
+            android:visibility="invisible"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp" />
+    </LinearLayout>
 </LinearLayout>

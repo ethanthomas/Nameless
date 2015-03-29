@@ -4,6 +4,7 @@ import android.content.Intent;
 
 import com.parse.Parse;
 import com.parse.ParseAnalytics;
+import com.parse.ParseInstallation;
 import com.parse.ParseUser;
 import com.parse.PushService;
 
@@ -17,6 +18,8 @@ public class Application extends android.app.Application {
         ParseUser.enableAutomaticUser();
         PushService.setDefaultPushCallback(this, MainActivity.class);
         PushService.subscribe(this, "Broadcast", MainActivity.class);
+        ParseInstallation.getCurrentInstallation().saveInBackground();
+
     }
 
     private Intent getIntent() {
