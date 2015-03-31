@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>5563857D-EDC1-4DDD-BB3E-032752F5310E</string>
+	<string>4C1181DD-E99E-4CDF-97BB-61B3210FE5A7</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Nameless</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,7 +14,7 @@
 		<string>https://github.com/ethanthomas/Nameless.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iOS/Nameless.xcodeproj</string>
+	<string>Nameless/Nameless.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>325342FCEB3212E7D567EC6607363356CBBBC096</key>
