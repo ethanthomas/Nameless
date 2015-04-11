@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0620"
+   LastUpgradeVersion = "0630"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CEFD94691ACB4362009BCA94"
+               BlueprintIdentifier = "CEE989C01AD998D900CF9362"
                BuildableName = "Nameless.app"
                BlueprintName = "Nameless"
                ReferencedContainer = "container:Nameless.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CEFD94821ACB4362009BCA94"
+               BlueprintIdentifier = "CEE989D51AD998DA00CF9362"
                BuildableName = "NamelessTests.xctest"
                BlueprintName = "NamelessTests"
                ReferencedContainer = "container:Nameless.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CEFD94821ACB4362009BCA94"
+               BlueprintIdentifier = "CEE989D51AD998DA00CF9362"
                BuildableName = "NamelessTests.xctest"
                BlueprintName = "NamelessTests"
                ReferencedContainer = "container:Nameless.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CEFD94691ACB4362009BCA94"
+            BlueprintIdentifier = "CEE989C01AD998D900CF9362"
             BuildableName = "Nameless.app"
             BlueprintName = "Nameless"
             ReferencedContainer = "container:Nameless.xcodeproj">
@@ -76,7 +76,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CEFD94691ACB4362009BCA94"
+            BlueprintIdentifier = "CEE989C01AD998D900CF9362"
             BuildableName = "Nameless.app"
             BlueprintName = "Nameless"
             ReferencedContainer = "container:Nameless.xcodeproj">
@@ -95,7 +95,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CEFD94691ACB4362009BCA94"
+            BlueprintIdentifier = "CEE989C01AD998D900CF9362"
             BuildableName = "Nameless.app"
             BlueprintName = "Nameless"
             ReferencedContainer = "container:Nameless.xcodeproj">

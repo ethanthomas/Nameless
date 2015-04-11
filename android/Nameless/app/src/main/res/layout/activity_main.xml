@@ -37,7 +37,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:alpha="0.0">
+        android:alpha="0.0"
+        android:background="@color/off_white">
 
         <Button
             android:id="@+id/closeConversationButton"
@@ -74,7 +75,9 @@
             android:stackFromBottom="true"
             android:layout_above="@+id/lowerLayout"
             android:dividerHeight="0dp"
-            android:divider="@android:color/transparent" />
+            android:divider="@android:color/transparent"
+            android:listSelector="@android:color/transparent"
+            android:background="@color/off_white" />
 
         <LinearLayout
             android:id="@+id/lowerLayout"
@@ -83,26 +86,38 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="@color/off_white"
-            android:layout_marginBottom="10dp"
-            android:padding="10dp">
+            android:padding="13dp">
 
-            <EditText
+            <android.support.v7.internal.widget.TintEditText
                 android:id="@+id/newMessageEditText"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:hint="Send Message"
-                android:layout_gravity="bottom"
-                android:layout_marginLeft="10dp" />
+                android:maxLines="7"
+                android:inputType="textMultiLine"
+                android:layout_gravity="bottom|center"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/round_rect"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="17dp"
+                android:paddingTop="17dp"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/sendButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Send"
-                android:layout_weight="1"
-                android:layout_gravity="bottom" />
+                android:layout_width="20dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/send"
+                android:background="@android:color/transparent"
+                android:paddingTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="20dp"
+                android:layout_gravity="center"
+                android:alpha="0.6" />
         </LinearLayout>
     </RelativeLayout>
-
 </RelativeLayout>
