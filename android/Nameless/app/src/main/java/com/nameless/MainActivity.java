@@ -71,10 +71,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
         adapter = new Adapter();
 //        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
-        if (sharedPreferences.getBoolean("userSaved", false) != true)
+        if (sharedPreferences.contains("userSaved") && !sharedPreferences.getBoolean("userSaved", false))
             setupParseForInitialUse();
         getRandomUsers();
         getMessages();
+
+        connectButton.setVisibility(View.VISIBLE);
+
     }
 
     public static void update() {
@@ -207,7 +210,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
                                 public void onClick(View v) {
                                     dialog2.dismiss();
                                 }
-                            }).show();
+                            })
+                            .show();
                 } else {
                     messages.clear();
                     adapter.notifyDataSetChanged();
@@ -227,9 +231,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     public void openChat() {
-
         connectButton.animate().translationY(-650).setInterpolator(new DecelerateInterpolator()).alpha(0.0f);
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -250,7 +252,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     public void getRandomUsers() {
-
         ArrayList<String> arr = new ArrayList<String>();
         arr.add(new ParseInstallation().getCurrentInstallation().getObjectId());
         final ParseQuery<ParseObject> query = ParseQuery.getQuery("User");
@@ -345,7 +346,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     }
                 }
             });
-
 
             Log.d("dddd", messages.toString());
         }

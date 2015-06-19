@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1CB5E865-F3C9-4B3B-A2D9-9234C69187A3</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>325342FCEB3212E7D567EC6607363356CBBBC096</key>
+		<string>https://github.com/ethanthomas/Nameless.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Nameless/Nameless.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>325342FCEB3212E7D567EC6607363356CBBBC096</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ethanthomas/Nameless.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>325342FCEB3212E7D567EC6607363356CBBBC096</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>325342FCEB3212E7D567EC6607363356CBBBC096</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Nameless</string>
+		</dict>
+	</array>
+</dict>
+</plist>
